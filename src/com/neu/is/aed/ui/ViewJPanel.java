@@ -460,7 +460,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         lblViewCity.setText(person.getCity());
         lblViewState.setText(person.getState());
         lblViewZip.setText(String.valueOf(person.getZip()));
-        lblViewDOB.setText(String.valueOf(person.getDob()));
+        String dateOfBirth = String.format("%1$tY-%1$tb-%1$td",person.getDob());
+        lblViewDOB.setText(dateOfBirth);
         lblViewPhoneNumber.setText(String.valueOf(person.getPhoneNumber()));
         lblViewFaxNumber.setText(String.valueOf(person.getFaxNumber()));
         lblViewEmail.setText(person.getEmail());
