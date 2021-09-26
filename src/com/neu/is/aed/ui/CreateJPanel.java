@@ -138,7 +138,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         lblSSN.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSSN.setText("SSN :");
 
-        lblMedicalInsuranceNumber.setText("Medical Insurance Number :");
+        lblMedicalInsuranceNumber.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblMedicalInsuranceNumber.setText("Medical Record Number :");
 
         lblBankAccountNumber.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblBankAccountNumber.setText("Bank Account Number :");
@@ -255,6 +256,11 @@ public class CreateJPanel extends javax.swing.JPanel {
                 txtMedicalInsuranceNumberActionPerformed(evt);
             }
         });
+        txtMedicalInsuranceNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMedicalInsuranceNumberKeyTyped(evt);
+            }
+        });
 
         txtBankAccountNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,10 +278,20 @@ public class CreateJPanel extends javax.swing.JPanel {
                 txtLicenseNumberActionPerformed(evt);
             }
         });
+        txtLicenseNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLicenseNumberKeyTyped(evt);
+            }
+        });
 
         txtVehicleNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtVehicleNumberActionPerformed(evt);
+            }
+        });
+        txtVehicleNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtVehicleNumberKeyTyped(evt);
             }
         });
 
@@ -794,15 +810,14 @@ public class CreateJPanel extends javax.swing.JPanel {
 
     private void txtBankAccountNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBankAccountNumberKeyTyped
         // TODO add your handling code here:
-        //Allow only digits in Fax Number field
-        char typedFaxNumber = evt.getKeyChar();
-        if(!Character.isDigit(typedFaxNumber)){
-            evt.consume();
-        }
         //Allow only digits in Bank Account Number field
         char typedBanAccountNumber = evt.getKeyChar();
         if(!Character.isDigit(typedBanAccountNumber)){
             evt.consume();
+        }
+        //Restrict the length to 10 
+        if(txtFaxNumber.getText().length() > 17){
+                evt.consume();
         }
     }//GEN-LAST:event_txtBankAccountNumberKeyTyped
 
@@ -818,6 +833,30 @@ public class CreateJPanel extends javax.swing.JPanel {
                 evt.consume();
         }
     }//GEN-LAST:event_txtSerialNumberKeyTyped
+
+    private void txtLicenseNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLicenseNumberKeyTyped
+        // TODO add your handling code here:
+        //Restrict the length to 15 
+        if(txtLicenseNumber.getText().length() > 13){
+                evt.consume();
+        }
+    }//GEN-LAST:event_txtLicenseNumberKeyTyped
+
+    private void txtVehicleNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtVehicleNumberKeyTyped
+        // TODO add your handling code here:
+        //Restrict the length to 8 
+        if(txtVehicleNumber.getText().length() > 7){
+                evt.consume();
+        }
+    }//GEN-LAST:event_txtVehicleNumberKeyTyped
+
+    private void txtMedicalInsuranceNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMedicalInsuranceNumberKeyTyped
+        // TODO add your handling code here:
+        //Restrict the length to 12 
+        if(txtMedicalInsuranceNumber.getText().length() > 11){
+                evt.consume();
+        }
+    }//GEN-LAST:event_txtMedicalInsuranceNumberKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;

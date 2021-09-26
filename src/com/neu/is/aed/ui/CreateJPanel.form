@@ -431,7 +431,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblMedicalInsuranceNumber">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Medical Insurance Number :"/>
+                <Property name="horizontalAlignment" type="int" value="4"/>
+                <Property name="text" type="java.lang.String" value="Medical Record Number :"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblBankAccountNumber">
@@ -524,6 +525,7 @@
             <Component class="javax.swing.JTextField" name="txtMedicalInsuranceNumber">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMedicalInsuranceNumberActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMedicalInsuranceNumberKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtBankAccountNumber">
@@ -535,11 +537,13 @@
             <Component class="javax.swing.JTextField" name="txtLicenseNumber">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLicenseNumberActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtLicenseNumberKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtVehicleNumber">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtVehicleNumberActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtVehicleNumberKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtLinkedIn">

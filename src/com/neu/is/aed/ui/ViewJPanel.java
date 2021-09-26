@@ -452,6 +452,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     private void displayProfile(){
+        try{
         lblViewProfileID.setText(String.valueOf(person.getProfileID()));
         System.out.println(person.getSsn());
         lblViewName.setText(person.getName());
@@ -466,10 +467,10 @@ public class ViewJPanel extends javax.swing.JPanel {
         lblViewFaxNumber.setText(String.valueOf(person.getFaxNumber()));
         lblViewEmail.setText(person.getEmail());
         lblViewSSN.setText(person.getSsn());
-        lblViewMedicalInsuranceNumber.setText(person.getMedicalInsuranceNumber());
+        lblViewMedicalInsuranceNumber.setText(person.getMedicalInsuranceNumber().toUpperCase());
         lblViewBankAccountNumber.setText(person.getBankAcctNumber());
-        lblViewLicenseNumber.setText(person.getLicenseNumber());
-        lblViewVehicleNumber.setText(person.getVehicleNumber());
+        lblViewLicenseNumber.setText(person.getLicenseNumber().toUpperCase());
+        lblViewVehicleNumber.setText(person.getVehicleNumber().toUpperCase());
         lblViewLinkedIn.setText(person.getLinkedIn());
         lblViewIPAddress.setText(person.getIPAddress());
         lblViewSerialNumber.setText(String.valueOf(person.getSerialNo()));
@@ -480,6 +481,9 @@ public class ViewJPanel extends javax.swing.JPanel {
             lblViewUploadPhoto.setIcon(icon); 
         } catch (IOException ex) {
             Logger.getLogger(ViewJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }catch(Exception e){
+            System.out.println(e);
         }
     }
 }
