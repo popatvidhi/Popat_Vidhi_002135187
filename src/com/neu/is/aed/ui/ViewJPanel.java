@@ -6,6 +6,12 @@
 package com.neu.is.aed.ui;
 
 import com.neu.is.aed.module.Person;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
@@ -202,11 +208,6 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(lblView, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(lblProfileID, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(lblViewProfileID, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
                         .addComponent(lblName, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
                         .addComponent(lblViewName, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -295,9 +296,14 @@ public class ViewJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(lblViewSerialNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblViewUploadPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 538, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(2, 2, 2)
+                        .addComponent(lblProfileID, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(lblViewProfileID, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(145, 145, 145))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(lblViewUploadPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,7 +472,13 @@ public class ViewJPanel extends javax.swing.JPanel {
         lblViewLinkedIn.setText(person.getLinkedIn());
         lblViewIPAddress.setText(person.getIPAddress());
         lblViewSerialNumber.setText(String.valueOf(person.getSerialNo()));
-        ImageIcon photoUpload = new ImageIcon(person.getPhotoUpload());    
-        lblViewUploadPhoto.setIcon(photoUpload);
+        try {
+            Image img = ImageIO.read(new File(person.getPhotoUpload()).getAbsoluteFile());
+            Image scaledImg = img.getScaledInstance(300, 300, Image.SCALE_SMOOTH);
+            ImageIcon icon = new ImageIcon(scaledImg);
+            lblViewUploadPhoto.setIcon(icon); 
+        } catch (IOException ex) {
+            Logger.getLogger(ViewJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

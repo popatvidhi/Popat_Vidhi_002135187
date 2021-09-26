@@ -659,7 +659,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         try{
-            if(isValidData() == true){ 
+           if(isValidData() == true){ 
             person.setProfileID(randProfileID.nextInt());
             person.setName(txtName.getText());
             person.setAddressLine1(txtAddressLine1.getText());
