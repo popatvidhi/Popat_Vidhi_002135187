@@ -22,6 +22,7 @@ public class Car {
     boolean isAvailable;
     String city; 
     String certificateExpiration;
+    public static Date lastUpdated= new Date();
     //initial
     public Car() {
     }

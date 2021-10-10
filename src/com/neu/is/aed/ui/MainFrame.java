@@ -26,51 +26,6 @@ public class MainFrame extends javax.swing.JFrame {
     Car car = new Car();
     public MainFrame(){
         initComponents();
-        cars.add(addCar1());
-        cars.add(addCar2());
-        cars.add(addCar3());
-        cars.add(addCar4());
-        cars.add(addCar5());
-        cars.add(addCar6());
-        cars.add(addCar7());
-        cars.add(addCar8());
-        cars.add(addCar9());
-    }
-    
-    private Car addCar1(){ 
-        return new Car("Swift", "Suzuki", "345672", "342456UT", 2019, 4, 1, false,"Boston", "Expired");
-    }
-    
-    private Car addCar2(){
-        return new Car("CLA 250", "Mercedes-Benez", "345019", "ART524524", 2020, 8, 2, false,"New York", "Certified");
-    }
-    
-    private Car addCar3(){ 
-        return new Car("Avalon", "Toyota", "89567", "342452454", 2021, 5, 1, true,"Los Angeles", "Certified");
-    }
-    
-    private Car addCar4(){ 
-        return new Car("C-Class 300", "Bentley", "345137", "3424OTR54", 1999, 6, 2, true,"Jersey City", "Expired");
-    }
-    
-    private Car addCar5(){ 
-        return new Car("Flying Spur", "Mercedes-Benz", "345045", "342NVC454", 2020, 8, 1, false,"Tampa", "Certified");
-    }
-    
-    private Car addCar6(){ 
-        return new Car("Cadenza", "Kia", "128767", "342N52TRW", 2021, 2, 1, true,"Miam", "Expired");
-    }
-    
-    private Car addCar7(){ 
-        return new Car("Accent", "Hyundai", "097667", "3OUB252454", 2000, 6, 4, true,"Minneapolis", "Certified");
-    }
-    
-    private Car addCar8(){ 
-        return new Car("Yaris", "Toyota", "246890", "3424UT454", 2019, 5, 1, false,"Kansas City", "Expired");
-    }
-    
-    private Car addCar9(){
-        return new Car("Mulsanne", "Bentley", "456670", "IU9452454", 2020, 2, 1, true,"Arlington", "Certified");
     }
     
     /**
@@ -91,6 +46,9 @@ public class MainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        controlPanel.setBackground(new java.awt.Color(81, 41, 96));
+
+        btnCreate.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +56,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        btnManage.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btnManage.setText("Manage");
         btnManage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +64,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        btnSearch.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,25 +79,22 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addComponent(btnManage)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(controlPanelLayout.createSequentialGroup()
-                        .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSearch)
-                            .addComponent(btnCreate))
-                        .addContainerGap(22, Short.MAX_VALUE))))
+                    .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnManage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(btnCreate)
-                .addGap(30, 30, 30)
-                .addComponent(btnManage)
-                .addGap(31, 31, 31)
-                .addComponent(btnSearch)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addGap(75, 75, 75)
+                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(btnManage, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(433, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -146,11 +103,11 @@ public class MainFrame extends javax.swing.JFrame {
         workArea.setLayout(workAreaLayout);
         workAreaLayout.setHorizontalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
+            .addGap(0, 637, Short.MAX_VALUE)
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 434, Short.MAX_VALUE)
+            .addGap(0, 725, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workArea);

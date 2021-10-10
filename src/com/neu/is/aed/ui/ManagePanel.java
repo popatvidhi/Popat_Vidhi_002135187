@@ -8,6 +8,7 @@ package com.neu.is.aed.ui;
 import com.neu.is.aed.model.Car;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -356,6 +357,7 @@ public class ManagePanel extends javax.swing.JPanel {
         car.setMinNumberOfSeats(Integer.parseInt(txtMinNumberOfSeats.getText()));
         car.setIsAvailable(chkYesAvailable.isSelected());
         car.setCity(comboCity.getSelectedItem().toString());
+        car.lastUpdated = new Date();
         if(chkCertified.isSelected())
             car.setCertificateExpiration("Certified");
         else{
