@@ -44,7 +44,7 @@ public class SearchPanel extends javax.swing.JPanel {
             model.removeRow(i);
         }
         for(Car car: cars){
-            if (car.getBrandName() == brandName ){
+            if (car.getBrandName().equals(brandName)){
                 Object row[] = new Object[10];
                 row[0] = car.getCarName();
                 row[1] = car.getBrandName();
@@ -262,7 +262,7 @@ public class SearchPanel extends javax.swing.JPanel {
             model.removeRow(i);
         }
         for(Car car: cars){
-            if (car.getCity() == city && car.isIsAvailable() == true){
+            if (car.getCity().equals(city) && car.isIsAvailable() == true){
                  Object row[] = new Object[10];
                 row[0] = car.getCarName();
                 row[1] = car.getBrandName();
@@ -287,7 +287,7 @@ public class SearchPanel extends javax.swing.JPanel {
             model.removeRow(i);
         }
         for(Car car: cars){
-            if (car.getCity() == city && car.isIsAvailable() == false){
+            if (car.getCity().equals(city) && car.isIsAvailable() == false){
                  Object row[] = new Object[10];
                 row[0] = car.getCarName();
                 row[1] = car.getBrandName();

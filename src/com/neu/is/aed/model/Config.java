@@ -38,7 +38,6 @@ public class Config {
             car.setBrandName(prop.getProperty(carNUmber + "BrandName"));
             car.setModelNumber(prop.getProperty(carNUmber + "ModelNumber"));
             car.setSerialNumber(prop.getProperty(carNUmber + "SerialNumber"));
-            System.out.println(prop.getProperty(carNUmber + "ManufactureYear"));
             car.setManufactureYear(Integer.parseInt(prop.getProperty(carNUmber + "ManufactureYear")));
             car.setMinNumberOfSeats(Integer.parseInt(prop.getProperty(carNUmber + "MinSeats")));
             car.setMaxNumberOfSeats(Integer.parseInt(prop.getProperty(carNUmber + "MaxSeats")));
