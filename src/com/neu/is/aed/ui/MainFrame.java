@@ -38,7 +38,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     private Car addCar1(){ 
-        return new Car("Swift", "Suzuki", "345672", "342456UT", 2019, 4, 1, true,"Boston", "Expired");
+        return new Car("Swift", "Suzuki", "345672", "342456UT", 2019, 4, 1, false,"Boston", "Expired");
     }
     
     private Car addCar2(){
@@ -137,7 +137,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(btnManage)
                 .addGap(31, 31, 31)
                 .addComponent(btnSearch)
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(246, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -150,7 +150,7 @@ public class MainFrame extends javax.swing.JFrame {
         );
         workAreaLayout.setVerticalGroup(
             workAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 434, Short.MAX_VALUE)
         );
 
         splitPane.setRightComponent(workArea);

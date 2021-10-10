@@ -22,7 +22,7 @@ public class Car {
     boolean isAvailable;
     String city; 
     String certificateExpiration;
-
+    //initial
     public Car() {
     }
 
