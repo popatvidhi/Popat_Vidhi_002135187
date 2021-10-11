@@ -565,8 +565,9 @@ public class CreatePanel extends javax.swing.JPanel {
         }else if(txtMinNumberOfSeats.getText().isBlank()){
             JOptionPane.showMessageDialog(this, missingField + lblMinNumberOfSeats.getText(), lblMinNumberOfSeats.getText(), JOptionPane.ERROR_MESSAGE);          
         }else if(serialNumbers.contains(txtSerialNumber.getText())){
-            JOptionPane.showMessageDialog(this, "Please enter a unique serial number", lblSerialNumber.getText(), JOptionPane.ERROR_MESSAGE);         
-
+            JOptionPane.showMessageDialog(this, "Please enter a unique serial number", lblSerialNumber.getText(), JOptionPane.ERROR_MESSAGE);        
+        }else if(Integer.parseInt(txtManufacturingYear.getText())> 2021){
+            JOptionPane.showMessageDialog(this, "Manufacturing year cannot be future dated", lblManufactureYear.getText(), JOptionPane.ERROR_MESSAGE);         
         }else{
             return isValid = true;
         }
