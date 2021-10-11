@@ -106,20 +106,24 @@ public class CreatePanel extends javax.swing.JPanel {
         lblMinNumberOfSeats = new javax.swing.JLabel();
         btnSaveMultiple = new javax.swing.JButton();
 
-        jPanel1.setBackground(new java.awt.Color(84, 41, 96));
+        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
         lblCarAvailable.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCarAvailable.setForeground(new java.awt.Color(255, 255, 255));
         lblCarAvailable.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblCarAvailable.setText("Car Availibilty :");
         lblCarAvailable.setToolTipText("");
 
         lblCarCity.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCarCity.setForeground(new java.awt.Color(255, 255, 255));
         lblCarCity.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblCarCity.setText("Available in City :");
         lblCarCity.setToolTipText("");
 
         lblExpiryDate.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblExpiryDate.setForeground(new java.awt.Color(255, 255, 255));
         lblExpiryDate.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblExpiryDate.setText("Maintenance Certificate :");
         lblExpiryDate.setToolTipText("");
@@ -150,6 +154,11 @@ public class CreatePanel extends javax.swing.JPanel {
         txtSerialNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSerialNumberActionPerformed(evt);
+            }
+        });
+        txtSerialNumber.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSerialNumberKeyTyped(evt);
             }
         });
 
@@ -199,6 +208,7 @@ public class CreatePanel extends javax.swing.JPanel {
         });
 
         lblTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("ADD NEW CAR");
 
@@ -226,10 +236,13 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
+        lblCarName.setBackground(new java.awt.Color(0, 0, 0));
         lblCarName.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCarName.setForeground(new java.awt.Color(255, 255, 255));
         lblCarName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblCarName.setText("Car Name :");
 
+        chkCertified.setBackground(new java.awt.Color(0, 0, 0));
         chkCertified.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         chkCertified.setText("Certified");
         chkCertified.addActionListener(new java.awt.event.ActionListener() {
@@ -238,10 +251,13 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
+        lblBrandName.setBackground(new java.awt.Color(0, 0, 0));
         lblBrandName.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblBrandName.setForeground(new java.awt.Color(255, 255, 255));
         lblBrandName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblBrandName.setText("Brand Name :");
 
+        chkExpired.setBackground(new java.awt.Color(0, 0, 0));
         chkExpired.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         chkExpired.setText("Expired");
         chkExpired.addActionListener(new java.awt.event.ActionListener() {
@@ -250,26 +266,36 @@ public class CreatePanel extends javax.swing.JPanel {
             }
         });
 
+        lblModelNumber.setBackground(new java.awt.Color(0, 0, 0));
         lblModelNumber.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblModelNumber.setForeground(new java.awt.Color(255, 255, 255));
         lblModelNumber.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblModelNumber.setText("Model Number :");
 
+        lblSerialNumber.setBackground(new java.awt.Color(0, 0, 0));
         lblSerialNumber.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblSerialNumber.setForeground(new java.awt.Color(255, 255, 255));
         lblSerialNumber.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSerialNumber.setText("Serial Number :");
         lblSerialNumber.setToolTipText("");
 
+        lblManufactureYear.setBackground(new java.awt.Color(0, 0, 0));
         lblManufactureYear.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblManufactureYear.setForeground(new java.awt.Color(255, 255, 255));
         lblManufactureYear.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblManufactureYear.setText("Manufacturing Year :");
         lblManufactureYear.setToolTipText("");
 
+        lblMaxNumberOfSeats.setBackground(new java.awt.Color(0, 0, 0));
         lblMaxNumberOfSeats.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblMaxNumberOfSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblMaxNumberOfSeats.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblMaxNumberOfSeats.setText("Maximum No. of Seats :");
         lblMaxNumberOfSeats.setToolTipText("");
 
+        lblMinNumberOfSeats.setBackground(new java.awt.Color(0, 0, 0));
         lblMinNumberOfSeats.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblMinNumberOfSeats.setForeground(new java.awt.Color(255, 255, 255));
         lblMinNumberOfSeats.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblMinNumberOfSeats.setText("Minimum No. of Seats :");
         lblMinNumberOfSeats.setToolTipText("");
@@ -387,7 +413,7 @@ public class CreatePanel extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(chkExpired, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(chkCertified, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addContainerGap(147, Short.MAX_VALUE)))
+                    .addContainerGap(159, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -397,7 +423,7 @@ public class CreatePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(451, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,6 +561,14 @@ public class CreatePanel extends javax.swing.JPanel {
         
         JOptionPane.showMessageDialog(this, "Car Fleet was loaded successfully!");
     }//GEN-LAST:event_btnSaveMultipleActionPerformed
+
+    private void txtSerialNumberKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSerialNumberKeyTyped
+        // TODO add your handling code here:
+        //Restrict the length to 20 
+        if(txtSerialNumber.getText().length() > 19){
+                evt.consume();
+        }
+    }//GEN-LAST:event_txtSerialNumberKeyTyped
 
     private boolean isValidData() {
 
