@@ -30,14 +30,17 @@ public class CreatePanel extends javax.swing.JPanel {
      * Creates new form CreatePanel
      */
     String missingField = "Missing Field: ";
-    private static String CAR_PROPERTIES_FILEPATH = "/Users/vidhi/Desktop/NEU/Semester 1/AED/Assignment02/";
-    private static String CAR_PROP_FILENAME = "config.properties";
-    
+    ArrayList<String> serialNumbers = new ArrayList<String>();
     ArrayList<Car> cars = new ArrayList<Car>();
     Config config = new Config();
     public CreatePanel(ArrayList<Car> cars) {
         initComponents();
         this.cars = cars;
+        chkYesAvailable.setSelected(true);
+        chkCertified.setSelected(true);
+        for (Car car: cars) {
+            serialNumbers.add(car.getSerialNumber());
+        }
     }
    
     private void addMultipleCars() throws IOException {
@@ -46,30 +49,6 @@ public class CreatePanel extends javax.swing.JPanel {
             
         }
     }
-    
-    /*public ArrayList<Car> addMultipleCars() {
-        // read from config file and return the list of car instances.
-        try (InputStream input = new FileInputStream(CAR_PROPERTIES_FILEPATH + CAR_PROP_FILENAME)) {
-
-            if (input != null) {
-                Properties prop = new Properties();
-                prop.load(input);
-
-                for (Object key : prop.keySet()) {
-                    Car carObj = new Gson().fromJson(prop.getProperty(key.toString()), Car.class);
-                    cars.add(carObj);
-                }
-            } else {
-                throw new FileNotFoundException("property file '" + CAR_PROP_FILENAME + "' not found in the classpath");
-            }
-        } catch (IOException e) {
-            //Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, e);
-            System.out.println(e);
-        }
-        return cars;
-    }*/
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -542,7 +521,7 @@ public class CreatePanel extends javax.swing.JPanel {
             evt.consume();
         }
         //Restrict the length to 4
-        if(txtMinNumberOfSeats.getText().length() > 3){
+        if(txtManufacturingYear.getText().length() > 3){
             evt.consume();
         }
     }//GEN-LAST:event_txtManufacturingYearKeyTyped
@@ -585,9 +564,13 @@ public class CreatePanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, missingField + lblMaxNumberOfSeats.getText(), lblMaxNumberOfSeats.getText(), JOptionPane.ERROR_MESSAGE);          
         }else if(txtMinNumberOfSeats.getText().isBlank()){
             JOptionPane.showMessageDialog(this, missingField + lblMinNumberOfSeats.getText(), lblMinNumberOfSeats.getText(), JOptionPane.ERROR_MESSAGE);          
+        }else if(serialNumbers.contains(txtSerialNumber.getText())){
+            JOptionPane.showMessageDialog(this, "Please enter a unique serial number", lblSerialNumber.getText(), JOptionPane.ERROR_MESSAGE);         
+
         }else{
             return isValid = true;
         }
+        
         return isValid;
     }
     
