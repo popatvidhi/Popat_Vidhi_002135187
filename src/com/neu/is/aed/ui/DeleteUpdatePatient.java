@@ -39,7 +39,7 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
         model.removeRow(i);
     }
     for(Encounter encounter: EncounterHistory.encounterHistory){
-        Object row[] = new Object[16];
+        Object row[] = new Object[15];
         
         row[0] = encounter.patient.person.getName();
         row[1] = encounter.patient.person.getAge();
@@ -53,10 +53,9 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
         row[9] = encounter.patient.person.address.getZip();
         row[10] = encounter.vitalSigns.getHeartRate();
         row[11] = encounter.vitalSigns.getHighBloodPressure();
-        row[12] = encounter.vitalSigns.getLowBloodPressure();
-        row[13] = encounter.vitalSigns.getOxygenLevel();
-        row[14] = encounter.vitalSigns.getBodytemprature();
-        row[15] = encounter.visitDate;
+        row[12] = encounter.vitalSigns.getOxygenLevel();
+        row[13] = encounter.vitalSigns.getBodytemprature();
+        row[14] = encounter.visitDate;
         
         model.addRow(row);
     }
@@ -91,14 +90,12 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
         lblAge = new javax.swing.JLabel();
         lblBodyTemprature = new javax.swing.JLabel();
         lblSetPatientID = new javax.swing.JLabel();
-        lblLowBloodPressure = new javax.swing.JLabel();
         lblRespiratoryRate = new javax.swing.JLabel();
         lblHighBloodPressure = new javax.swing.JLabel();
         lblPatientID = new javax.swing.JLabel();
         lblHeartRate = new javax.swing.JLabel();
         lblSetHeartRate = new javax.swing.JLabel();
         lblSetHighBloodPressure = new javax.swing.JLabel();
-        lblSetLowBloodPressure = new javax.swing.JLabel();
         lblSetRespiratoryRate = new javax.swing.JLabel();
         lblSetBodyTemprature = new javax.swing.JLabel();
         txtPhoneNumber = new javax.swing.JTextField();
@@ -112,17 +109,17 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
 
         tblEncounterHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Age", "Gender", "PhoneNumber", "Blood Group", "House Number", "Community", "City", "State", "Zip", "Heart Rate", "High Blood Pressure", "Low Blood Pressure", "Respiratory Rate", "Body Temprature", "Visit Date"
+                "Name", "Age", "Gender", "PhoneNumber", "Blood Group", "House Number", "Community", "City", "State", "Zip", "Heart Rate", "Blood Pressure", "Respiratory Rate", "Body Temprature", "Visit Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -193,9 +190,6 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
 
         lblSetPatientID.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblLowBloodPressure.setText("Low Blood Pressure :");
-        lblLowBloodPressure.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         lblRespiratoryRate.setText("Respiratory Rate :");
         lblRespiratoryRate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -211,8 +205,6 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
         lblSetHeartRate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblSetHighBloodPressure.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        lblSetLowBloodPressure.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         lblSetRespiratoryRate.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -279,14 +271,12 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
                             .addComponent(lblRespiratoryRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblPatientID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblBodyTemprature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblLowBloodPressure, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblVisitDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblSetPatientID, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                             .addComponent(lblSetHeartRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSetHighBloodPressure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblSetLowBloodPressure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSetRespiratoryRate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSetBodyTemprature, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblSetVisitDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -387,26 +377,20 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblHighBloodPressure)
                             .addComponent(lblSetHighBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblLowBloodPressure)
-                            .addComponent(lblSetLowBloodPressure, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblRespiratoryRate)
                             .addComponent(lblSetRespiratoryRate, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblBodyTemprature)
                             .addComponent(lblSetBodyTemprature, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblVisitDate)
-                            .addComponent(lblSetVisitDate, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(79, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnDelete)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(lblSetVisitDate, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnDelete))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -477,7 +461,6 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
         lblSetPatientID.setText(String.valueOf(this.encounter.patient.getPatientId()));
         lblSetHeartRate.setText(String.valueOf(this.encounter.vitalSigns.getHeartRate()));
         lblSetHighBloodPressure.setText(String.valueOf(this.encounter.vitalSigns.getHighBloodPressure()));
-        lblSetLowBloodPressure.setText(String.valueOf(this.encounter.vitalSigns.getLowBloodPressure()));
         lblSetRespiratoryRate.setText(String.valueOf(this.encounter.vitalSigns.getOxygenLevel()));
         lblSetBodyTemprature.setText(String.valueOf(this.encounter.vitalSigns.getBodytemprature()));
         lblSetVisitDate.setText(this.encounter.visitDate.toString());
@@ -518,7 +501,6 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
     private javax.swing.JLabel lblHeartRate;
     private javax.swing.JLabel lblHighBloodPressure;
     private javax.swing.JLabel lblHouseNumber;
-    private javax.swing.JLabel lblLowBloodPressure;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblPatientID;
     private javax.swing.JLabel lblPhoneNumber;
@@ -529,7 +511,6 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
     private javax.swing.JLabel lblSetGender;
     private javax.swing.JLabel lblSetHeartRate;
     private javax.swing.JLabel lblSetHighBloodPressure;
-    private javax.swing.JLabel lblSetLowBloodPressure;
     private javax.swing.JLabel lblSetName;
     private javax.swing.JLabel lblSetPatientID;
     private javax.swing.JLabel lblSetRespiratoryRate;

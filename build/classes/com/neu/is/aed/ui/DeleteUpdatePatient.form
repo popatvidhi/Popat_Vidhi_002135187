@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -26,7 +26,6 @@
                           <Component id="lblRespiratoryRate" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblPatientID" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblBodyTemprature" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblLowBloodPressure" alignment="1" min="-2" pref="131" max="-2" attributes="0"/>
                           <Component id="lblVisitDate" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -34,7 +33,6 @@
                           <Component id="lblSetPatientID" alignment="0" pref="119" max="32767" attributes="0"/>
                           <Component id="lblSetHeartRate" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblSetHighBloodPressure" alignment="0" max="32767" attributes="0"/>
-                          <Component id="lblSetLowBloodPressure" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblSetRespiratoryRate" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblSetBodyTemprature" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblSetVisitDate" alignment="0" max="32767" attributes="0"/>
@@ -160,33 +158,25 @@
                           <Component id="lblHighBloodPressure" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSetHighBloodPressure" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblLowBloodPressure" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblSetLowBloodPressure" min="-2" pref="21" max="-2" attributes="0"/>
-                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblRespiratoryRate" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSetRespiratoryRate" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="lblBodyTemprature" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSetBodyTemprature" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblVisitDate" min="-2" max="-2" attributes="0"/>
                           <Component id="lblSetVisitDate" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -199,7 +189,7 @@
         <Component class="javax.swing.JTable" name="tblEncounterHistory">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="16" rowCount="4">
+              <Table columnCount="15" rowCount="4">
                 <Column editable="false" title="Name" type="java.lang.Object"/>
                 <Column editable="false" title="Age" type="java.lang.Object"/>
                 <Column editable="false" title="Gender" type="java.lang.Object"/>
@@ -211,8 +201,7 @@
                 <Column editable="false" title="State" type="java.lang.Object"/>
                 <Column editable="false" title="Zip" type="java.lang.Object"/>
                 <Column editable="false" title="Heart Rate" type="java.lang.Object"/>
-                <Column editable="false" title="High Blood Pressure" type="java.lang.Object"/>
-                <Column editable="false" title="Low Blood Pressure" type="java.lang.Object"/>
+                <Column editable="false" title="Blood Pressure" type="java.lang.Object"/>
                 <Column editable="false" title="Respiratory Rate" type="java.lang.Object"/>
                 <Column editable="false" title="Body Temprature" type="java.lang.Object"/>
                 <Column editable="false" title="Visit Date" type="java.lang.Object"/>
@@ -220,11 +209,6 @@
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -483,16 +467,6 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblLowBloodPressure">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Low Blood Pressure :"/>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblRespiratoryRate">
       <Properties>
         <Property name="text" type="java.lang.String" value="Respiratory Rate :"/>
@@ -543,15 +517,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSetHighBloodPressure">
-      <Properties>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblSetLowBloodPressure">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">

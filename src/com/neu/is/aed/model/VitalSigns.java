@@ -12,7 +12,6 @@ package com.neu.is.aed.model;
 public class VitalSigns {
     int heartRate;
     int highBloodPressure;
-    int lowBloodPressure;
     float oxygenLevel;
     float bodytemprature;
 
@@ -30,14 +29,6 @@ public class VitalSigns {
 
     public void setHighBloodPressure(int highBloodPressure) {
         this.highBloodPressure = highBloodPressure;
-    }
-
-    public int getLowBloodPressure() {
-        return lowBloodPressure;
-    }
-
-    public void setLowBloodPressure(int lowBloodPressure) {
-        this.lowBloodPressure = lowBloodPressure;
     }
 
     public float getOxygenLevel() {

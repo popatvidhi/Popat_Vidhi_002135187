@@ -5,8 +5,13 @@
  */
 package com.neu.is.aed.ui;
 
+import com.neu.is.aed.model.City;
 import com.neu.is.aed.model.Encounter;
 import com.neu.is.aed.model.EncounterHistory;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,9 +23,13 @@ public class ViewPatient extends javax.swing.JPanel {
     /**
      * Creates new form ViewPatient
      */
+    HashMap<String, ArrayList<Encounter>> abnormalData;
     public ViewPatient() {
         initComponents();
         loadEncounterTable();
+        dropdownCity();
+        dropdownCommunity();
+        
     }
     
     public void loadEncounterTable(){
@@ -30,7 +39,7 @@ public class ViewPatient extends javax.swing.JPanel {
         model.removeRow(i);
     }
     for(Encounter encounter: EncounterHistory.encounterHistory){
-        Object row[] = new Object[16];
+        Object row[] = new Object[15];
         
         row[0] = encounter.patient.person.getName();
         row[1] = encounter.patient.person.getAge();
@@ -44,13 +53,159 @@ public class ViewPatient extends javax.swing.JPanel {
         row[9] = encounter.patient.person.address.getZip();
         row[10] = encounter.vitalSigns.getHeartRate();
         row[11] = encounter.vitalSigns.getHighBloodPressure();
-        row[12] = encounter.vitalSigns.getLowBloodPressure();
-        row[13] = encounter.vitalSigns.getOxygenLevel();
-        row[14] = encounter.vitalSigns.getBodytemprature();
-        row[15] = encounter.visitDate;
+        row[12] = encounter.vitalSigns.getOxygenLevel();
+        row[13] = encounter.vitalSigns.getBodytemprature();
+        row[14] = encounter.visitDate;
         model.addRow(row);
     }
     }
+    
+    public void openAbnromalPatient(){
+        int rowCount = tblEncounterHistory.getRowCount();
+        DefaultTableModel model = (DefaultTableModel) tblEncounterHistory.getModel();
+        for(int i=rowCount - 1;i>=0;i--){
+            model.removeRow(i);
+        }
+        for(Encounter encounter: EncounterHistory.encounterHistory){
+        Object row[] = new Object[15];
+        if((encounter.patient.person.address.getCommunityName().equals(comboCommunity.getSelectedItem().toString())) &&
+                (encounter.patient.person.address.getCityName().equals(comboCity.getSelectedItem().toString()))){
+        if(encounter.patient.person.getAge() == 0.1){
+            if(encounter.vitalSigns.getHighBloodPressure() < 50 || encounter.vitalSigns.getHighBloodPressure() >= 70){
+                row[0] = encounter.patient.person.getName();
+                row[1] = encounter.patient.person.getAge();
+                row[2] = encounter.patient.person.getGender();
+                row[3] = encounter.patient.person.getPhoneNumber();
+                row[4] = encounter.patient. person.getBloodgroup();
+                row[5] = encounter.patient.person.address.getHouseNumber();
+                row[6] = encounter.patient.person.address.getCommunityName();
+                row[7] = encounter.patient.person.address.getCityName();
+                row[8] = encounter.patient.person.address.getState();
+                row[9] = encounter.patient.person.address.getZip();
+                row[10] = encounter.vitalSigns.getHeartRate();
+                row[11] = encounter.vitalSigns.getHighBloodPressure();
+                row[12] = encounter.vitalSigns.getOxygenLevel();
+                row[13] = encounter.vitalSigns.getBodytemprature();
+                row[14] = encounter.visitDate;
+            }
+        }else if(encounter.patient.person.getAge() > 0.1 && encounter.patient.person.getAge() <= 1){
+            if(encounter.vitalSigns.getHighBloodPressure() < 70 || encounter.vitalSigns.getHighBloodPressure() >= 100){
+                row[0] = encounter.patient.person.getName();
+                row[1] = encounter.patient.person.getAge();
+                row[2] = encounter.patient.person.getGender();
+                row[3] = encounter.patient.person.getPhoneNumber();
+                row[4] = encounter.patient. person.getBloodgroup();
+                row[5] = encounter.patient.person.address.getHouseNumber();
+                row[6] = encounter.patient.person.address.getCommunityName();
+                row[7] = encounter.patient.person.address.getCityName();
+                row[8] = encounter.patient.person.address.getState();
+                row[9] = encounter.patient.person.address.getZip();
+                row[10] = encounter.vitalSigns.getHeartRate();
+                row[11] = encounter.vitalSigns.getHighBloodPressure();
+                row[12] = encounter.vitalSigns.getOxygenLevel();
+                row[13] = encounter.vitalSigns.getBodytemprature();
+                row[14] = encounter.visitDate;
+        }
+        }else if(encounter.patient.person.getAge() > 1 && encounter.patient.person.getAge() <= 3){
+            if(encounter.vitalSigns.getHighBloodPressure() < 80 || encounter.vitalSigns.getHighBloodPressure() >= 110){
+                row[0] = encounter.patient.person.getName();
+                row[1] = encounter.patient.person.getAge();
+                row[2] = encounter.patient.person.getGender();
+                row[3] = encounter.patient.person.getPhoneNumber();
+                row[4] = encounter.patient. person.getBloodgroup();
+                row[5] = encounter.patient.person.address.getHouseNumber();
+                row[6] = encounter.patient.person.address.getCommunityName();
+                row[7] = encounter.patient.person.address.getCityName();
+                row[8] = encounter.patient.person.address.getState();
+                row[9] = encounter.patient.person.address.getZip();
+                row[10] = encounter.vitalSigns.getHeartRate();
+                row[11] = encounter.vitalSigns.getHighBloodPressure();
+                row[12] = encounter.vitalSigns.getOxygenLevel();
+                row[13] = encounter.vitalSigns.getBodytemprature();
+                row[14] = encounter.visitDate;
+        }
+        }else if(encounter.patient.person.getAge() > 3 && encounter.patient.person.getAge() <= 5){
+            if(encounter.vitalSigns.getHighBloodPressure() < 80 || encounter.vitalSigns.getHighBloodPressure() >= 110){
+                row[0] = encounter.patient.person.getName();
+                row[1] = encounter.patient.person.getAge();
+                row[2] = encounter.patient.person.getGender();
+                row[3] = encounter.patient.person.getPhoneNumber();
+                row[4] = encounter.patient. person.getBloodgroup();
+                row[5] = encounter.patient.person.address.getHouseNumber();
+                row[6] = encounter.patient.person.address.getCommunityName();
+                row[7] = encounter.patient.person.address.getCityName();
+                row[8] = encounter.patient.person.address.getState();
+                row[9] = encounter.patient.person.address.getZip();
+                row[10] = encounter.vitalSigns.getHeartRate();
+                row[11] = encounter.vitalSigns.getHighBloodPressure();
+                row[12] = encounter.vitalSigns.getOxygenLevel();
+                row[13] = encounter.vitalSigns.getBodytemprature();
+                row[14] = encounter.visitDate;
+        }
+        }else if(encounter.patient.person.getAge() > 5 && encounter.patient.person.getAge() <= 12){
+            if(encounter.vitalSigns.getHighBloodPressure() < 80 || encounter.vitalSigns.getHighBloodPressure() >= 120){
+                row[0] = encounter.patient.person.getName();
+                row[1] = encounter.patient.person.getAge();
+                row[2] = encounter.patient.person.getGender();
+                row[3] = encounter.patient.person.getPhoneNumber();
+                row[4] = encounter.patient. person.getBloodgroup();
+                row[5] = encounter.patient.person.address.getHouseNumber();
+                row[6] = encounter.patient.person.address.getCommunityName();
+                row[7] = encounter.patient.person.address.getCityName();
+                row[8] = encounter.patient.person.address.getState();
+                row[9] = encounter.patient.person.address.getZip();
+                row[10] = encounter.vitalSigns.getHeartRate();
+                row[11] = encounter.vitalSigns.getHighBloodPressure();
+                row[12] = encounter.vitalSigns.getOxygenLevel();
+                row[13] = encounter.vitalSigns.getBodytemprature();
+                row[14] = encounter.visitDate;
+        }
+        }else if(encounter.patient.person.getAge() > 12 ){
+            if(encounter.vitalSigns.getHighBloodPressure() < 110 || encounter.vitalSigns.getHighBloodPressure() >= 120){
+                row[0] = encounter.patient.person.getName();
+                row[1] = encounter.patient.person.getAge();
+                row[2] = encounter.patient.person.getGender();
+                row[3] = encounter.patient.person.getPhoneNumber();
+                row[4] = encounter.patient. person.getBloodgroup();
+                row[5] = encounter.patient.person.address.getHouseNumber();
+                row[6] = encounter.patient.person.address.getCommunityName();
+                row[7] = encounter.patient.person.address.getCityName();
+                row[8] = encounter.patient.person.address.getState();
+                row[9] = encounter.patient.person.address.getZip();
+                row[10] = encounter.vitalSigns.getHeartRate();
+                row[11] = encounter.vitalSigns.getHighBloodPressure();
+                row[12] = encounter.vitalSigns.getOxygenLevel();
+                row[13] = encounter.vitalSigns.getBodytemprature();
+                row[14] = encounter.visitDate;
+        }
+        }
+        model.addRow(row);
+        }
+    }
+    }
+    
+    
+    public void dropdownCity() {
+        ArrayList<String> cityDropdown = new ArrayList<>();
+        for (String cityValue : City.cityValues) {
+            cityDropdown.add(String.valueOf(cityValue));
+        }
+        String[] citySDropdown = cityDropdown.toArray(new String[cityDropdown.size()]);
+        DefaultComboBoxModel<String> SDropdownModel = new DefaultComboBoxModel<>(citySDropdown);
+        comboCity.setModel(SDropdownModel);
+    }
+
+    public void dropdownCommunity() {
+        ArrayList<String> communityDropdown = new ArrayList<>();
+        City.communityDir.stream().filter(communityValue -> (communityValue.cityName == null ? comboCity.getSelectedItem().toString() == null : communityValue.cityName.equals(comboCity.getSelectedItem().toString()))).forEachOrdered(communityValue -> {
+            communityDropdown.add(String.valueOf(communityValue.communityName));
+        });
+        String[] citySDropdown = communityDropdown.toArray(new String[communityDropdown.size()]);
+        DefaultComboBoxModel<String> SDropdownModel = new DefaultComboBoxModel<>(citySDropdown);
+        this.comboCommunity.setModel(SDropdownModel);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -62,22 +217,25 @@ public class ViewPatient extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblEncounterHistory = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        lblCity = new javax.swing.JLabel();
+        comboCity = new javax.swing.JComboBox<>();
+        lblCommunity = new javax.swing.JLabel();
+        comboCommunity = new javax.swing.JComboBox<>();
+        btnAbnormal = new javax.swing.JButton();
 
         tblEncounterHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Name", "Age", "Gender", "PhoneNumber", "Blood Group", "House Number", "Community", "City", "State", "Zip", "Heart Rate", "High Blood Pressure", "Low Blood Pressure", "Respiratory Rate", "Body Temprature", "Visit Date"
+                "Name", "Age", "Gender", "PhoneNumber", "Blood Group", "House Number", "Community", "City", "State", "Zip", "Heart Rate", "Blood Pressure", "Respiratory Rate", "Body Temprature", "Visit Date"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -91,17 +249,35 @@ public class ViewPatient extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblEncounterHistory);
 
-        jButton1.setText("ALL ABNORMAL PATIENT");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        lblCity.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCity.setText("City :");
+
+        comboCity.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        comboCity.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboCityItemStateChanged(evt);
+            }
+        });
+        comboCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                comboCityActionPerformed(evt);
             }
         });
 
-        jButton2.setText("ABNORMAL PATEINT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        lblCommunity.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCommunity.setText("Community  :");
+
+        comboCommunity.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        comboCommunity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                comboCommunityActionPerformed(evt);
+            }
+        });
+
+        btnAbnormal.setText("SEARCH ABNORMAL");
+        btnAbnormal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbnormalActionPerformed(evt);
             }
         });
 
@@ -110,28 +286,44 @@ public class ViewPatient extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(jButton1)
-                        .addGap(28, 28, 28)
-                        .addComponent(jButton2)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblCommunity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAbnormal)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(505, Short.MAX_VALUE))
+                    .addComponent(lblCity, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommunity)
+                    .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnAbnormal)
+                .addContainerGap(422, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -139,19 +331,32 @@ public class ViewPatient extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblEncounterHistoryMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void comboCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_comboCityActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void comboCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboCommunityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_comboCommunityActionPerformed
+
+    private void comboCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCityItemStateChanged
+        // TODO add your handling code here:
+        this.dropdownCommunity();
+    }//GEN-LAST:event_comboCityItemStateChanged
+
+    private void btnAbnormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbnormalActionPerformed
+        // TODO add your handling code here:
+        openAbnromalPatient();
+    }//GEN-LAST:event_btnAbnormalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAbnormal;
+    private javax.swing.JComboBox<String> comboCity;
+    private javax.swing.JComboBox<String> comboCommunity;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCity;
+    private javax.swing.JLabel lblCommunity;
     private javax.swing.JTable tblEncounterHistory;
     // End of variables declaration//GEN-END:variables
 }

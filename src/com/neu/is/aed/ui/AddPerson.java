@@ -27,11 +27,11 @@ public class AddPerson extends javax.swing.JPanel {
     String missingField = "Missing Field: ";
     public AddPerson() {
         initComponents();
-        generateDropdownCity();
-        generateDropdownCommunity();
+        dropdownCity();
+        dropdownCommunity();
     }
     
-    public void generateDropdownCity() {
+    public void dropdownCity() {
         ArrayList<String> cityDropdown = new ArrayList<>();
         for (String cityValue : City.cityValues) {
             cityDropdown.add(String.valueOf(cityValue));
@@ -41,7 +41,7 @@ public class AddPerson extends javax.swing.JPanel {
         comboCity.setModel(SDropdownModel);
     }
 
-    public void generateDropdownCommunity() {
+    public void dropdownCommunity() {
         ArrayList<String> communityDropdown = new ArrayList<>();
         City.communityDir.stream().filter(communityValue -> (communityValue.cityName == null ? comboCity.getSelectedItem().toString() == null : communityValue.cityName.equals(comboCity.getSelectedItem().toString()))).forEachOrdered(communityValue -> {
             communityDropdown.add(String.valueOf(communityValue.communityName));
@@ -478,7 +478,7 @@ public class AddPerson extends javax.swing.JPanel {
 
     private void comboCityItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboCityItemStateChanged
         // TODO add your handling code here:
-        this.generateDropdownCommunity();
+        this.dropdownCommunity();
     }//GEN-LAST:event_comboCityItemStateChanged
     
     private boolean isValidData() {
