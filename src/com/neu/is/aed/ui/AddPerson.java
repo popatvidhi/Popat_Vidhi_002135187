@@ -199,6 +199,11 @@ public class AddPerson extends javax.swing.JPanel {
                 txtStateActionPerformed(evt);
             }
         });
+        txtState.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtStateKeyTyped(evt);
+            }
+        });
 
         lblZip.setBackground(new java.awt.Color(255, 255, 255));
         lblZip.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
@@ -480,6 +485,18 @@ public class AddPerson extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.dropdownCommunity();
     }//GEN-LAST:event_comboCityItemStateChanged
+
+    private void txtStateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtStateKeyTyped
+        // TODO add your handling code here:
+        char typedState = evt.getKeyChar();
+        if(!Character.isAlphabetic(typedState) && !Character.isWhitespace(typedState)){
+            evt.consume();
+        }
+        //Restrict the length to 256 
+        if(txtState.getText().length() > 255){
+                evt.consume();
+        }
+    }//GEN-LAST:event_txtStateKeyTyped
     
     private boolean isValidData() {
 
