@@ -8,6 +8,8 @@ package com.neu.is.aed.ui;
 import com.neu.is.aed.model.City;
 import com.neu.is.aed.model.Encounter;
 import com.neu.is.aed.model.EncounterHistory;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,7 +32,7 @@ public class ViewPatient extends javax.swing.JPanel {
         dropdownCity();
         dropdownCommunity();
         
-    }
+        }
     
     public void loadEncounterTable(){
     int rowCount = tblEncounterHistory.getRowCount();
@@ -229,6 +231,7 @@ public class ViewPatient extends javax.swing.JPanel {
         lblCommunity = new javax.swing.JLabel();
         comboCommunity = new javax.swing.JComboBox<>();
         btnAbnormal = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -301,6 +304,8 @@ public class ViewPatient extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/vidhi/Desktop/NEU/Semester 1/AED/Assignment04/AbnormalCaseTable.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -323,7 +328,8 @@ public class ViewPatient extends javax.swing.JPanel {
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(btnAbnormal))
+                            .addComponent(btnAbnormal)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -342,7 +348,9 @@ public class ViewPatient extends javax.swing.JPanel {
                     .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAbnormal)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -373,6 +381,7 @@ public class ViewPatient extends javax.swing.JPanel {
     private javax.swing.JButton btnAbnormal;
     private javax.swing.JComboBox<String> comboCity;
     private javax.swing.JComboBox<String> comboCommunity;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCity;
