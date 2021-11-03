@@ -66,6 +66,7 @@ public class ViewPatient extends javax.swing.JPanel {
         for(int i=rowCount - 1;i>=0;i--){
             model.removeRow(i);
         }
+        System.out.println(EncounterHistory.encounterHistory);
         for(Encounter encounter: EncounterHistory.encounterHistory){
         Object row[] = new Object[15];
         if((encounter.patient.person.address.getCommunityName().equals(comboCommunity.getSelectedItem().toString())) &&
@@ -87,6 +88,7 @@ public class ViewPatient extends javax.swing.JPanel {
                 row[12] = encounter.vitalSigns.getOxygenLevel();
                 row[13] = encounter.vitalSigns.getBodytemprature();
                 row[14] = encounter.visitDate;
+                model.addRow(row);
             }
         }else if(encounter.patient.person.getAge() > 0.1 && encounter.patient.person.getAge() <= 1){
             if(encounter.vitalSigns.getHighBloodPressure() < 70 || encounter.vitalSigns.getHighBloodPressure() >= 100){
@@ -105,6 +107,7 @@ public class ViewPatient extends javax.swing.JPanel {
                 row[12] = encounter.vitalSigns.getOxygenLevel();
                 row[13] = encounter.vitalSigns.getBodytemprature();
                 row[14] = encounter.visitDate;
+                model.addRow(row);
         }
         }else if(encounter.patient.person.getAge() > 1 && encounter.patient.person.getAge() <= 3){
             if(encounter.vitalSigns.getHighBloodPressure() < 80 || encounter.vitalSigns.getHighBloodPressure() >= 110){
@@ -123,6 +126,7 @@ public class ViewPatient extends javax.swing.JPanel {
                 row[12] = encounter.vitalSigns.getOxygenLevel();
                 row[13] = encounter.vitalSigns.getBodytemprature();
                 row[14] = encounter.visitDate;
+                model.addRow(row);
         }
         }else if(encounter.patient.person.getAge() > 3 && encounter.patient.person.getAge() <= 5){
             if(encounter.vitalSigns.getHighBloodPressure() < 80 || encounter.vitalSigns.getHighBloodPressure() >= 110){
@@ -141,6 +145,7 @@ public class ViewPatient extends javax.swing.JPanel {
                 row[12] = encounter.vitalSigns.getOxygenLevel();
                 row[13] = encounter.vitalSigns.getBodytemprature();
                 row[14] = encounter.visitDate;
+                model.addRow(row);
         }
         }else if(encounter.patient.person.getAge() > 5 && encounter.patient.person.getAge() <= 12){
             if(encounter.vitalSigns.getHighBloodPressure() < 80 || encounter.vitalSigns.getHighBloodPressure() >= 120){
@@ -159,6 +164,7 @@ public class ViewPatient extends javax.swing.JPanel {
                 row[12] = encounter.vitalSigns.getOxygenLevel();
                 row[13] = encounter.vitalSigns.getBodytemprature();
                 row[14] = encounter.visitDate;
+                model.addRow(row);
         }
         }else if(encounter.patient.person.getAge() > 12 ){
             if(encounter.vitalSigns.getHighBloodPressure() < 110 || encounter.vitalSigns.getHighBloodPressure() >= 120){
@@ -177,9 +183,9 @@ public class ViewPatient extends javax.swing.JPanel {
                 row[12] = encounter.vitalSigns.getOxygenLevel();
                 row[13] = encounter.vitalSigns.getBodytemprature();
                 row[14] = encounter.visitDate;
+                model.addRow(row);
         }
         }
-        model.addRow(row);
         }
     }
     }
