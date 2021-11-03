@@ -68,7 +68,6 @@ public class ViewPatient extends javax.swing.JPanel {
         for(int i=rowCount - 1;i>=0;i--){
             model.removeRow(i);
         }
-        System.out.println(EncounterHistory.encounterHistory);
         for(Encounter encounter: EncounterHistory.encounterHistory){
         Object row[] = new Object[15];
         if((encounter.patient.person.address.getCommunityName().equalsIgnoreCase(comboCommunity.getSelectedItem().toString())) &&
@@ -190,6 +189,10 @@ public class ViewPatient extends javax.swing.JPanel {
         }
         }
     }
+        int rows = tblEncounterHistory.getRowCount();
+        if(rows != 0){       
+        lblSetCount.setText(String.valueOf(rows));
+        }
     }
     
     
@@ -231,7 +234,9 @@ public class ViewPatient extends javax.swing.JPanel {
         lblCommunity = new javax.swing.JLabel();
         comboCommunity = new javax.swing.JComboBox<>();
         btnAbnormal = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblImage = new javax.swing.JLabel();
+        lblCount = new javax.swing.JLabel();
+        lblSetCount = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -304,7 +309,14 @@ public class ViewPatient extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/vidhi/Desktop/NEU/Semester 1/AED/Assignment04/AbnormalCaseTable.png")); // NOI18N
+        lblImage.setIcon(new javax.swing.ImageIcon("/Users/vidhi/Desktop/NEU/Semester 1/AED/Assignment04/AbnormalCaseTable.png")); // NOI18N
+
+        lblCount.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblCount.setText("Count :");
+        lblCount.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lblSetCount.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblSetCount.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -329,7 +341,11 @@ public class ViewPatient extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addComponent(btnAbnormal)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCount)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblSetCount, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -349,8 +365,12 @@ public class ViewPatient extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(btnAbnormal)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCount, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSetCount, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -381,11 +401,13 @@ public class ViewPatient extends javax.swing.JPanel {
     private javax.swing.JButton btnAbnormal;
     private javax.swing.JComboBox<String> comboCity;
     private javax.swing.JComboBox<String> comboCommunity;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCity;
     private javax.swing.JLabel lblCommunity;
+    private javax.swing.JLabel lblCount;
+    private javax.swing.JLabel lblImage;
+    private javax.swing.JLabel lblSetCount;
     private javax.swing.JTable tblEncounterHistory;
     // End of variables declaration//GEN-END:variables
 }
