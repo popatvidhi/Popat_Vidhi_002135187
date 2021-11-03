@@ -28,7 +28,7 @@ public class ViewPatient extends javax.swing.JPanel {
     HashMap<String, ArrayList<Encounter>> abnormalData;
     public ViewPatient() {
         initComponents();
-        loadEncounterTable();
+        //loadEncounterTable();
         dropdownCity();
         dropdownCommunity();
         

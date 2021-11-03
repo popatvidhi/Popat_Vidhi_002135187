@@ -30,6 +30,7 @@ public class AddPatient extends javax.swing.JPanel {
     String missingField = "Missing Field: ";
     Person person = new Person();
     Patient patient = new Patient();
+    ArrayList<String> patientDuplicate = new ArrayList<String>();
     public AddPatient() {
         initComponents(); 
         loadPersonTable();
@@ -459,6 +460,7 @@ public class AddPatient extends javax.swing.JPanel {
 
     private void btnAddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientActionPerformed
         // TODO add your handling code here:
+        if(isValidPatientData() == true){
         Patient patient = new Patient();
         
         int min = 1000;  
@@ -479,7 +481,7 @@ public class AddPatient extends javax.swing.JPanel {
         PatientDirectory.patientDir.add(patient);
         loadPatientTable();
         JOptionPane.showMessageDialog(this, "Patient Successfully Added");
-        
+        }
         
     }//GEN-LAST:event_btnAddPatientActionPerformed
 
@@ -514,6 +516,11 @@ public class AddPatient extends javax.swing.JPanel {
         // TODO add your handling code here:
         int row = tblPatient.rowAtPoint( evt.getPoint());
         this.patient = PatientDirectory.patientDir.get(row);
+        
+        txtHeartRate.setText("");
+        txtHighBloodPressure.setText("");
+        txtRespiratoryRate.setText("");
+        txtBodyTemprature.setText("");
         openSelectedPatient();
     }//GEN-LAST:event_tblPatientMouseClicked
 
@@ -601,6 +608,19 @@ public class AddPatient extends javax.swing.JPanel {
         return isValid;
     }
 
+    private boolean isValidPatientData() {
+
+        boolean isValid = false;
+        for (Patient patient: PatientDirectory.patientDir) {
+            patientDuplicate.add(String.valueOf(patient.person.getPhoneNumber()));
+        }
+        if(patientDuplicate.contains(lblSetPhoneNumber.getText())){
+            JOptionPane.showMessageDialog(this, "Duplicate Patient", lblSetName.getText(), JOptionPane.ERROR_MESSAGE);  
+        }else{
+            return isValid = true;
+        }
+        return isValid;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddPatient;
     private javax.swing.JButton btnAddVisit;
