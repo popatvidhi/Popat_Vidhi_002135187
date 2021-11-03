@@ -48,7 +48,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         splitPane.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        controlPanel.setBackground(new java.awt.Color(204, 0, 0));
+        controlPanel.setBackground(new java.awt.Color(0, 0, 0));
 
         btnAddPerson.setBackground(new java.awt.Color(255, 255, 255));
         btnAddPerson.setForeground(new java.awt.Color(0, 0, 0));
@@ -126,6 +126,8 @@ public class MainFrame extends javax.swing.JFrame {
         );
 
         splitPane.setTopComponent(controlPanel);
+
+        workAreaPanel.setBackground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout workAreaPanelLayout = new javax.swing.GroupLayout(workAreaPanel);
         workAreaPanel.setLayout(workAreaPanelLayout);

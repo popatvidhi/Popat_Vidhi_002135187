@@ -84,7 +84,7 @@ public class AddPerson extends javax.swing.JPanel {
         comboCommunity = new javax.swing.JComboBox<>();
         comboCity = new javax.swing.JComboBox<>();
 
-        setBackground(new java.awt.Color(204, 204, 204));
+        setBackground(new java.awt.Color(153, 153, 153));
         setForeground(new java.awt.Color(0, 0, 0));
 
         lblName.setBackground(new java.awt.Color(255, 255, 255));

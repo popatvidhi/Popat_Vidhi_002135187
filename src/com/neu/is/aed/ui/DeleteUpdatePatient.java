@@ -107,6 +107,8 @@ public class DeleteUpdatePatient extends javax.swing.JPanel {
         lblVisitDate = new javax.swing.JLabel();
         lblSetVisitDate = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(153, 153, 153));
+
         tblEncounterHistory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
