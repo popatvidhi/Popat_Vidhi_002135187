@@ -128,7 +128,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         txtComment = new javax.swing.JTextField();
         btnMenuShow = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 102, 51));
+        setBackground(new java.awt.Color(255, 153, 51));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
