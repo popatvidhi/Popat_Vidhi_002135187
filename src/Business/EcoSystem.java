@@ -101,7 +101,6 @@ public class EcoSystem extends Organization{
         menuDirectory = new MenuDirectory();
         orderDirectory = new OrderDirectory();
         
-       // networkList=new ArrayList<Network>();
     }
 
     
