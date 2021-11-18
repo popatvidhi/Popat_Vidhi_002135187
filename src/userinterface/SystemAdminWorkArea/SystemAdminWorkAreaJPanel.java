@@ -113,7 +113,10 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnDelivery = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 153, 51));
         setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setBackground(new java.awt.Color(255, 153, 51));
 
         btnCustomer.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         btnCustomer.setText("CUSTOMER");
@@ -139,10 +142,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("MANAGE");
-        jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
