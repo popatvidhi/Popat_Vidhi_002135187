@@ -80,7 +80,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jSplitPane1.setOrientation(javax.swing.JSplitPane.VERTICAL_SPLIT);
 
-        loginJButton.setText("Login");
+        loginJButton.setText("SIGN IN");
         loginJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginJButtonActionPerformed(evt);
@@ -93,11 +93,11 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("User Name");
+        jLabel1.setText("USERNAME");
 
-        jLabel2.setText("Password");
+        jLabel2.setText("PASSWORD");
 
-        logoutJButton.setText("Logout");
+        logoutJButton.setText("SIGN OUT");
         logoutJButton.setEnabled(false);
         logoutJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,7 +116,7 @@ public class MainJFrame extends javax.swing.JFrame {
                             .addGap(124, 124, 124)
                             .addComponent(loginJLabel))
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap(213, Short.MAX_VALUE)
+                            .addContainerGap(211, Short.MAX_VALUE)
                             .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,7 +126,7 @@ public class MainJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

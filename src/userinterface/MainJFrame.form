@@ -53,7 +53,7 @@
                                   <Component id="loginJLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace pref="213" max="32767" attributes="0"/>
+                                  <EmptySpace pref="211" max="32767" attributes="0"/>
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -68,7 +68,7 @@
                           <Component id="passwordField" min="-2" pref="118" max="-2" attributes="0"/>
                           <Component id="logoutJButton" min="-2" pref="92" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="236" max="32767" attributes="0"/>
+                      <EmptySpace pref="233" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -100,7 +100,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="loginJButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Login"/>
+                <Property name="text" type="java.lang.String" value="SIGN IN"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loginJButtonActionPerformed"/>
@@ -115,19 +115,19 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="User Name"/>
+                <Property name="text" type="java.lang.String" value="USERNAME"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Password"/>
+                <Property name="text" type="java.lang.String" value="PASSWORD"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="loginJLabel">
             </Component>
             <Component class="javax.swing.JButton" name="logoutJButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Logout"/>
+                <Property name="text" type="java.lang.String" value="SIGN OUT"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
