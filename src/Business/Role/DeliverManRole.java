@@ -13,7 +13,7 @@ import Business.Order.OrderDirectory;
 import Business.Restaurant.RestaurantDirectory;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
+import UI.DeliveryManRole.DeliveryManWorkAreaJPanel;
 
 /**
  *
