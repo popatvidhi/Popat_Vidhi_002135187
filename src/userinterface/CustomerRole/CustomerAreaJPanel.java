@@ -161,14 +161,14 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             workRequestJTable.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        requestTestJButton.setText("Add Comment");
+        requestTestJButton.setText("ADD COMMENT");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 requestTestJButtonActionPerformed(evt);
             }
         });
 
-        refreshTestJButton.setText("Refresh");
+        refreshTestJButton.setText("REFRESH");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshTestJButtonActionPerformed(evt);
@@ -176,7 +176,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         });
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Customer :");
+        enterpriseLabel.setText("CUSTOMER :");
 
         valueLabel.setText("<value>");
 
@@ -200,18 +200,18 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setText("Quantity:");
+        jLabel1.setText("QUANTITY :");
 
-        btnConfirm.setText("Confirm");
+        btnConfirm.setText("CONFIRM");
         btnConfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfirmActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Comment:");
+        jLabel2.setText("COMMENT :");
 
-        btnMenuShow.setText("Show Menu");
+        btnMenuShow.setText("SHOW MENU");
         btnMenuShow.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuShowActionPerformed(evt);

@@ -99,14 +99,14 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jScrollPane1.setViewportView(tblMenu);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Manage Menu");
+        jLabel1.setText("MENU");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel2.setText("Add Item");
+        jLabel2.setText("ADD ITEM");
 
-        jLabel3.setText("Item Name:");
+        jLabel3.setText("ITEM NAME :");
 
-        jLabel4.setText("Price:");
+        jLabel4.setText("PRICE :");
 
         txtItemName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +120,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnAdd.setText("Add Item");
+        btnAdd.setText("ADD ITEM");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);

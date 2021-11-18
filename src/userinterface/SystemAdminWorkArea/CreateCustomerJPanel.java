@@ -77,7 +77,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
         jLabel2.setText("First Name*:");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Lastt Name*:");
+        jLabel3.setText("Last Name*:");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Email Address*:");

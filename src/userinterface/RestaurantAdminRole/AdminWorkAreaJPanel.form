@@ -23,7 +23,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="My Work Area -Adminstrative Role"/>
+        <Property name="text" type="java.lang.String" value="MY WORK AREA -ADMINISTRATIVE ROLE"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -33,7 +33,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="userJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Restaurant Info"/>
+        <Property name="text" type="java.lang.String" value="MANAGE RESTAURANT INFO"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userJButtonActionPerformed"/>
@@ -46,7 +46,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="manageEmployeeJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage menu"/>
+        <Property name="text" type="java.lang.String" value="MANAGE MENU"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageEmployeeJButtonActionPerformed"/>
@@ -59,7 +59,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="manageOrganizationJButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Orders"/>
+        <Property name="text" type="java.lang.String" value="MANAGE ORDERS"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="manageOrganizationJButtonActionPerformed"/>
@@ -75,11 +75,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Restaurant :"/>
+        <Property name="text" type="java.lang.String" value="RESTAURANT :"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="90" width="120" height="30"/>
+          <AbsoluteConstraints x="90" y="90" width="140" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

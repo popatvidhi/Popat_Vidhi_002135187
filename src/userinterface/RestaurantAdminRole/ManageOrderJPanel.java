@@ -91,14 +91,14 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblOrder);
 
-        btnCompleted.setText("Completed");
+        btnCompleted.setText("COMPLETED");
         btnCompleted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCompletedActionPerformed(evt);
             }
         });
 
-        btnAccepted.setText("Accepted");
+        btnAccepted.setText("ACCEPTED");
         btnAccepted.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAcceptedActionPerformed(evt);
@@ -106,7 +106,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setText("Orders");
+        jLabel1.setText("ORDERS");
 
         btnBack.setText("<Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
