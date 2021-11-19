@@ -68,8 +68,8 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("MY WORK AREA -ADMINISTRATIVE ROLE");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, -1, -1));
+        jLabel1.setText("MANAGER ROLE");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
         userJButton.setText("MANAGE RESTAURANT INFO");
         userJButton.addActionListener(new java.awt.event.ActionListener() {

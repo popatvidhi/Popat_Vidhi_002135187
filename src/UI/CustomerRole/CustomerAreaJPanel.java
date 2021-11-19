@@ -37,7 +37,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     private OrderDirectory orderDirectory;
     private static int count = 1;
     /**
-     * Creates new form DoctorWorkAreaJPanel
+     * Creates new form CustomerWorkAreaJPanel
      */
     public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem ecoSystem, 
             CustomerDirectory customerDirectory, RestaurantDirectory restaurantDirectory, 
