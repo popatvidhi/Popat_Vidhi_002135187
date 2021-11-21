@@ -5,6 +5,7 @@
  */
 package Business.Restaurant;
 
+import UI.MainJFrame;
 import java.util.ArrayList;
 
 /**
@@ -36,6 +37,7 @@ public class RestaurantDirectory {
     
     public void removeRestaurant(Restaurant restaurant){
         restaurantDirectory.remove(restaurant);
+        MainJFrame.system.userAccountDirectory.removeUserAccount(restaurant.getUserName());
     }
     
     public Restaurant getRestaurant(String name) {

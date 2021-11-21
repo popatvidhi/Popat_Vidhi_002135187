@@ -5,6 +5,7 @@
  */
 package Business.Customer;
 
+import UI.MainJFrame;
 import java.util.ArrayList;
 
 /**
@@ -37,6 +38,7 @@ public class CustomerDirectory {
     
     public void removeCustomer(Customer customer){
         customerDirectory.remove(customer);
+        MainJFrame.system.userAccountDirectory.removeUserAccount(customer.getUserName());
     }
     
     public Customer getCustomer(String name){

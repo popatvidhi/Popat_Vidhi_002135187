@@ -5,6 +5,7 @@
  */
 package Business.Menu;
 
+import UI.MainJFrame;
 import java.util.ArrayList;
 
 /**

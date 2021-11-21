@@ -30,7 +30,6 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
     private RestaurantDirectory restaurantDirectory;
     private MenuDirectory menuDirectory;
     private OrderDirectory orderDirectory;
-    String orderId;
     /**
      * Creates new form ManageOrderJPanel
      */
@@ -42,8 +41,6 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         this.restaurantDirectory = ecoSystem.getRestaurantDirectory();
         this.menuDirectory = ecoSystem.getMenuDirectory();
         this.orderDirectory = ecoSystem.getOrderDirectory();
-        this.orderId = orderId;
-        //tableRecordsStatus.setSize(tableRecordsStatus.getPreferredSize());
         populateTable();
         populateDeliveryTable();
     }
@@ -84,6 +81,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblDeliveryMan = new javax.swing.JTable();
         btnAssignDelivery = new javax.swing.JButton();
+        btnDeclined = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 153, 51));
 
@@ -152,6 +150,13 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDeclined.setText("DECLINED");
+        btnDeclined.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeclinedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -162,6 +167,8 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
                     .addComponent(btnAssignDelivery)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnDeclined)
+                        .addGap(63, 63, 63)
                         .addComponent(btnAccepted)
                         .addGap(48, 48, 48)
                         .addComponent(btnCompleted))
@@ -189,7 +196,8 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompleted)
-                    .addComponent(btnAccepted))
+                    .addComponent(btnAccepted)
+                    .addComponent(btnDeclined))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -217,6 +225,11 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             return;
         }
         
+        else if(order.getOrderStatus().equals("Order Declined")){
+            JOptionPane.showMessageDialog(null, "Order is Declined");
+            return;
+        }
+        
         else {
             JOptionPane.showMessageDialog(null, "Order is already ready for pick up");
             return;
@@ -230,13 +243,18 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int selectedRow = tblOrder.getSelectedRow();
         if(selectedRow < 0) {
-            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warining", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
         
         Order order = (Order)tblOrder.getValueAt(selectedRow, 0);
         if(order.getOrderStatus().equals("Order Placed")) {
             order.setOrderStatus("Order Accepted");
+        }
+        
+        else if(order.getOrderStatus().equals("Order Declined")){
+            JOptionPane.showMessageDialog(null, "Order is Declined");
+            return;
         }
         
         else {
@@ -263,13 +281,55 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Please select a row");
             return;
         }
+        
         DeliveryMan deliveryPartner = (DeliveryMan) tblDeliveryMan.getValueAt(selectDeliverManRow, 0);
         Order order = (Order) tblOrder.getValueAt(selectedRow,0);
-        order.setDeliveryMan(deliveryPartner.getUserName());
-        System.out.println("gxgfchgchg" + deliveryPartner.getName());
-        order.setOrderStatus("Order Picked up");
-        populateTable();
+        if(!(order.getOrderStatus().equals("Order Ready for Pick up"))){
+            JOptionPane.showMessageDialog(null,"Order not completed yet");
+        }
+        else{
+            order.setDeliveryMan(deliveryPartner.getUserName());
+            order.setOrderStatus("Order Picked up");
+            JOptionPane.showMessageDialog(null, "Order Picked up");
+            populateTable();
+        }
     }//GEN-LAST:event_btnAssignDeliveryActionPerformed
+
+    private void btnDeclinedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeclinedActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblOrder.getSelectedRow();
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warning", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        Order order = (Order)tblOrder.getValueAt(selectedRow, 0);
+        if(order.getOrderStatus().equals("Order Accepted")) {
+            JOptionPane.showMessageDialog(null, "Order is Accepted and hence cannot be declined");
+            return;
+        }
+        
+        else if(order.getOrderStatus().equals("Order Ready for Pick up")) {
+            JOptionPane.showMessageDialog(null, "Order is ready and hence cannot be declined");
+            return;
+        }
+        
+        else if(order.getOrderStatus().equals("Delivered")) {
+            JOptionPane.showMessageDialog(null, "Order is already delivered");
+            return;
+        }
+        
+        else if(order.getOrderStatus().equals("Order Picked up")){
+            JOptionPane.showMessageDialog(null, "Order is already picked up ");
+            return;
+        }
+        
+        else {
+            order.setOrderStatus("Order Declined");
+        }
+        
+        populateTable();
+    }//GEN-LAST:event_btnDeclinedActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -277,6 +337,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAssignDelivery;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCompleted;
+    private javax.swing.JButton btnDeclined;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -284,6 +345,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
     private javax.swing.JTable tblOrder;
     // End of variables declaration//GEN-END:variables
     private javax.swing.JLabel tableRecordsStatus;
+    
     private void populateDeliveryTable() {
         JTable table = tblDeliveryMan;
         int rowCount = table.getRowCount();

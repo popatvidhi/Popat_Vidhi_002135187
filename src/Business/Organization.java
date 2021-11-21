@@ -19,7 +19,7 @@ public abstract class Organization {
     private String name;
     private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
-    private UserAccountDirectory userAccountDirectory;
+    public static UserAccountDirectory userAccountDirectory;
     private int organizationID;
     private static int counter=0;
     

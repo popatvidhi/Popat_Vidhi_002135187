@@ -6,6 +6,7 @@ package Business.UserAccount;
 
 import Business.Employee.Employee;
 import Business.Role.Role;
+import UI.MainJFrame;
 import java.util.ArrayList;
 
 /**
@@ -48,5 +49,15 @@ public class UserAccountDirectory {
                 return false;
         }
         return true;
+    }
+    
+    public void removeUserAccount(String username){
+        for (UserAccount acc: userAccountList) {
+            if (acc.getUsername().equalsIgnoreCase(username)) {
+                userAccountList.remove(acc);
+                MainJFrame.dB4OUtil.storeSystem(MainJFrame.system);
+                break;
+            }
+        }
     }
 }

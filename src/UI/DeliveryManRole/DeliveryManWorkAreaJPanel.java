@@ -139,7 +139,6 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
             return;
         }
         order.setOrderStatus("Delivered");
-        //orderDirectory.getOrderDirectory().remove(order);
         
         JOptionPane.showMessageDialog(null, "Delivered");
         populateDeliveryManTable();

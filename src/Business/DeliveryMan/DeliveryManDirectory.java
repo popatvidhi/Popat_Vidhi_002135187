@@ -5,6 +5,7 @@
  */
 package Business.DeliveryMan;
 
+import UI.MainJFrame;
 import java.util.ArrayList;
 
 /**
@@ -34,5 +35,6 @@ public class DeliveryManDirectory {
     
     public void removeDeliveryMan(DeliveryMan deliveryMan) {
         deliveryManDirectory.remove(deliveryMan);
+        MainJFrame.system.userAccountDirectory.removeUserAccount(deliveryMan.getUserName());
     }
 }
