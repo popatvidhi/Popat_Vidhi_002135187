@@ -129,8 +129,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for (Order order : business.getOrderDirectory().getOrderDirectory()) {
             if(order.getDeliveryMan() != null){
-            if (order.getOrderStatus() != null && order.getOrderStatus().equals("Delivered")
-                    && (order.getDeliveryMan().equalsIgnoreCase(userAccount.getUsername()))) {
+            if ((order.getDeliveryMan().equalsIgnoreCase(userAccount.getUsername()))) {
                 Object[] row = new Object[6];
                 row[0] = order;
                 row[1] = order.getCustomer().getName();

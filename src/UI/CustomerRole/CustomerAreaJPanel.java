@@ -74,14 +74,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
     }
     
-    public void populateRestaurant() {
-        boxRestaurant.removeAllItems();
-        boxRestaurant.addItem("  ");
-        for(Restaurant res : ecoSystem.getRestaurantDirectory().getRestaurantDirectory()) {
-            //System.out.println("res" + res);
-            boxRestaurant.addItem(res.getRestaurantName());
-        }
-    }
     
     public void populateRequestTable(){
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
@@ -100,6 +92,15 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 row[7] = order.getQuantity();
                 model.addRow(row);
             }
+        }
+    }
+    
+    public void populateRestaurant() {
+        boxRestaurant.removeAllItems();
+        boxRestaurant.addItem("  ");
+        for(Restaurant res : ecoSystem.getRestaurantDirectory().getRestaurantDirectory()) {
+            //System.out.println("res" + res);
+            boxRestaurant.addItem(res.getRestaurantName());
         }
     }
     
