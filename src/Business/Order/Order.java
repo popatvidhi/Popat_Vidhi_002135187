@@ -69,16 +69,6 @@ public class Order extends WorkRequest {
         this.customer = customer;
     }
 
-    public String getDeliveryMan() {
-        return deliveryMan;
-    }
-
-    public void setDeliveryMan(String deliveryMan) {
-        this.deliveryMan = deliveryMan;
-    }
-
-    
-
     public int getQuantity() {
         return quantity;
     }
@@ -109,5 +99,14 @@ public class Order extends WorkRequest {
     public String toString() {
         return orderId;
     }
+
+    public String getDeliveryMan() {
+        return deliveryMan;
+    }
+
+    public void setDeliveryMan(String deliveryMan) {
+        this.deliveryMan = deliveryMan;
+    }
+    
     
 }

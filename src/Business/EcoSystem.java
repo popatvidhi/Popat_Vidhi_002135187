@@ -9,6 +9,7 @@ package Business;
 import Business.Customer.CustomerDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.Menu.MenuDirectory;
+import Business.Order.Order;
 import Business.Order.OrderDirectory;
 import Business.Restaurant.RestaurantDirectory;
 import Business.Role.Role;
@@ -108,6 +109,16 @@ public class EcoSystem extends Organization{
         //
        return false;
     }
-
+    
+    public Order getOrderById(String id) {
+        Order order = null;
+        for(Order o: orderDirectory.getOrderDirectory()){
+            if(o.getOrderId().equals(id)){
+                order=o;
+                break;
+            }
+        }
+        return order;
+    }
     
 }

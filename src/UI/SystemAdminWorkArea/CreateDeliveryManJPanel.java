@@ -295,7 +295,7 @@ public class CreateDeliveryManJPanel extends javax.swing.JPanel {
             }
         }
 
-        ecoSystem.getDeliveryManDirectory().newDeliveryMan(name, address, email, phoneNumber, age);
+        ecoSystem.getDeliveryManDirectory().newDeliveryMan(name, address, email, phoneNumber, age, userName);
         Employee employee = ecoSystem.getEmployeeDirectory().createEmployee(email);
         ecoSystem.getUserAccountDirectory().createUserAccount(userName, password, employee, new DeliverManRole());
 

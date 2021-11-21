@@ -17,12 +17,14 @@ public class Restaurant {
     private String managerName;
     private String phoneNumber;
     private MenuDirectory MenuDirectory;
+    private String userName;
     
-    public Restaurant(String restaurantName, String address, String managerName, String phoneNumber) {
+    public Restaurant(String restaurantName, String address, String managerName, String phoneNumber, String userName) {
         this.restaurantName = restaurantName;
         this.address = address;
         this.managerName = managerName;
         this.phoneNumber = phoneNumber;
+        this.userName = userName;
     }
 
     public MenuDirectory getMenuDirectory() {
@@ -72,5 +74,14 @@ public class Restaurant {
         return restaurantName;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+    
+    
     
 }

@@ -15,13 +15,15 @@ public class DeliveryMan {
     private String email;
     private String phoneNumber;
     private int age;
+    private String userName;
     
-    public DeliveryMan(String name, String address, String email, String phoneNumber, int age) {
+    public DeliveryMan(String name, String address, String email, String phoneNumber, int age, String userName) {
         this.name = name;
         this.address = address;
         this.age = age;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.userName = userName;
     }
 
     public String getName() {
@@ -67,6 +69,14 @@ public class DeliveryMan {
     @Override
     public String toString() {
         return name;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
     
     
