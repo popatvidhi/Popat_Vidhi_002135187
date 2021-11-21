@@ -54,7 +54,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         this.orderDirectory = ecoSystem.getOrderDirectory();
         valueLabel.setText(account.getUsername());
         populateRequestTable();
-        populateRestaurantCombo();
+        populateRestaurant();
         
         
     }
@@ -74,7 +74,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         }
     }
     
-    public void populateRestaurantCombo() {
+    public void populateRestaurant() {
         boxRestaurant.removeAllItems();
         boxRestaurant.addItem("  ");
         for(Restaurant res : ecoSystem.getRestaurantDirectory().getRestaurantDirectory()) {

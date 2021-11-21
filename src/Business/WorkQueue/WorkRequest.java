@@ -14,11 +14,11 @@ import java.util.Date;
 public abstract class WorkRequest {
 
     private String message;
-    private UserAccount sender;
-    private UserAccount receiver;
     private String status;
     private Date requestDate;
     private Date resolveDate;
+    private UserAccount sender;
+    private UserAccount receiver;
     
     public WorkRequest(){
         requestDate = new Date();
@@ -31,14 +31,15 @@ public abstract class WorkRequest {
     public void setMessage(String message) {
         this.message = message;
     }
-
-    public UserAccount getSender() {
-        return sender;
+    
+    public Date getRequestDate() {
+        return requestDate;
     }
 
-    public void setSender(UserAccount sender) {
-        this.sender = sender;
+    public void setRequestDate(Date requestDate) {
+        this.requestDate = requestDate;
     }
+
 
     public UserAccount getReceiver() {
         return receiver;
@@ -46,6 +47,14 @@ public abstract class WorkRequest {
 
     public void setReceiver(UserAccount receiver) {
         this.receiver = receiver;
+    }
+    
+    public UserAccount getSender() {
+        return sender;
+    }
+
+    public void setSender(UserAccount sender) {
+        this.sender = sender;
     }
 
     public String getStatus() {
@@ -56,13 +65,6 @@ public abstract class WorkRequest {
         this.status = status;
     }
 
-    public Date getRequestDate() {
-        return requestDate;
-    }
-
-    public void setRequestDate(Date requestDate) {
-        this.requestDate = requestDate;
-    }
 
     public Date getResolveDate() {
         return resolveDate;

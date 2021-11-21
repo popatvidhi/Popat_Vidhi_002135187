@@ -27,13 +27,14 @@ public class MenuDirectory {
         this.menuDirectory = menuDirectory;
     }
     
+    public void removeMenu(Menu menu) {
+        menuDirectory.remove(menu);
+    }
+    
     public Menu newItem(String itemName, double price, String res) {
         Menu menu = new Menu(itemName, price, res);
         menuDirectory.add(menu);
         return menu;
     }
     
-    public void removeMenu(Menu menu) {
-        menuDirectory.remove(menu);
-    }
 }

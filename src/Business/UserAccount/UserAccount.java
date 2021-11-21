@@ -16,8 +16,8 @@ public class UserAccount {
     
     private String username;
     private String password;
-    private Employee employee;
     private Role role;
+    private Employee employee;
     private WorkQueue workQueue;
 
     public UserAccount() {
@@ -46,16 +46,16 @@ public class UserAccount {
         return role;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
-
     public void setRole(Role role) {
         this.role = role;
     }
 
     public Employee getEmployee() {
         return employee;
+    }
+    
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public WorkQueue getWorkQueue() {

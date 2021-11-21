@@ -35,6 +35,6 @@ public class DeliveryManDirectory {
     
     public void removeDeliveryMan(DeliveryMan deliveryMan) {
         deliveryManDirectory.remove(deliveryMan);
-        MainJFrame.system.userAccountDirectory.removeUserAccount(deliveryMan.getUserName());
+        MainJFrame.ecoSystem.userAccountDirectory.removeUserAccount(deliveryMan.getUserName());
     }
 }

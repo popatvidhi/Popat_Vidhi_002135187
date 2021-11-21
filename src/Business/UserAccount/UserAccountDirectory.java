@@ -37,8 +37,8 @@ public class UserAccountDirectory {
         UserAccount userAccount = new UserAccount();
         userAccount.setUsername(username);
         userAccount.setPassword(password);
-        userAccount.setEmployee(employee);
         userAccount.setRole(role);
+        userAccount.setEmployee(employee);
         userAccountList.add(userAccount);
         return userAccount;
     }
@@ -55,7 +55,7 @@ public class UserAccountDirectory {
         for (UserAccount acc: userAccountList) {
             if (acc.getUsername().equalsIgnoreCase(username)) {
                 userAccountList.remove(acc);
-                MainJFrame.dB4OUtil.storeSystem(MainJFrame.system);
+                MainJFrame.dB4O.storeSystem(MainJFrame.ecoSystem);
                 break;
             }
         }

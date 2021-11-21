@@ -123,6 +123,27 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
     
+    public void populateRefreshDeliveryManTable() {
+        
+        DefaultTableModel model = (DefaultTableModel) tblDeliveryMan.getModel();
+        model.setRowCount(0);
+        for (Order order : business.getOrderDirectory().getOrderDirectory()) {
+            if(order.getDeliveryMan() != null){
+            if (order.getOrderStatus() != null && order.getOrderStatus().equals("Delivered")
+                    && (order.getDeliveryMan().equalsIgnoreCase(userAccount.getUsername()))) {
+                Object[] row = new Object[6];
+                row[0] = order;
+                row[1] = order.getCustomer().getName();
+                row[2] = order.getCustomer().getHomeAddress();
+                row[3] = order.getRestaurant().getRestaurantName();
+                row[4] = order.getRestaurant().getAddress();
+                row[5] = order.getOrderStatus();
+                model.addRow(row);
+            }
+            }
+        }
+    }
+    
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
         
         int selectedRow = tblDeliveryMan.getSelectedRow();
@@ -146,7 +167,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_processJButtonActionPerformed
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
-        populateDeliveryManTable();
+        populateRefreshDeliveryManTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

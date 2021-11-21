@@ -45,13 +45,6 @@ public class Order extends WorkRequest {
         this.orderId = orderId;
     }
 
-    public String getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
 
     public Restaurant getRestaurant() {
         return restaurant;
@@ -60,7 +53,15 @@ public class Order extends WorkRequest {
     public void setRestaurant(Restaurant restaurant) {
         this.restaurant = restaurant;
     }
+    
+    public Menu getMenu() {
+        return menu;
+    }
 
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+    
     public Customer getCustomer() {
         return customer;
     }
@@ -76,13 +77,13 @@ public class Order extends WorkRequest {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    public Menu getMenu() {
-        return menu;
+    
+    public String getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setMenu(Menu menu) {
-        this.menu = menu;
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     public String getResult() {

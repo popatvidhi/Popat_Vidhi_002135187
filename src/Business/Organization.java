@@ -55,18 +55,6 @@ public abstract class Organization {
         return userAccountDirectory;
     }
 
-    public int getOrganizationID() {
-        return organizationID;
-    }
-
-    public EmployeeDirectory getEmployeeDirectory() {
-        return employeeDirectory;
-    }
-    
-    public String getName() {
-        return name;
-    }
-
     public WorkQueue getWorkQueue() {
         return workQueue;
     }
@@ -77,6 +65,18 @@ public abstract class Organization {
 
     public void setWorkQueue(WorkQueue workQueue) {
         this.workQueue = workQueue;
+    }
+    
+    public int getOrganizationID() {
+        return organizationID;
+    }
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+    
+    public String getName() {
+        return name;
     }
 
     @Override

@@ -12,12 +12,12 @@ package Business.Customer;
 public class Customer {
     
     private String name;
-    private String email;
-    private String phoneNumber;
     private int age;
     private String homeAddress;
     private String userName;
-   
+    private String email;
+    private String phoneNumber;
+    
     public Customer(String name, String email, String phoneNumber, int age, String homeAddress, String userName) {
         this.name = name;
         this.email = email;
@@ -27,14 +27,6 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -42,13 +34,12 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getName() {
+        return name;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getAge() {
@@ -58,14 +49,15 @@ public class Customer {
     public void setAge(int age) {
         this.age = age;
     }
-
-    public String getHomeAddress() {
-        return homeAddress;
+    
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setHomeAddress(String homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
+
 
     public String getUserName() {
         return userName;
@@ -73,6 +65,14 @@ public class Customer {
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+    
+    public String getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(String homeAddress) {
+        this.homeAddress = homeAddress;
     }
     
     @Override

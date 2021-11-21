@@ -36,10 +36,6 @@ public class CustomerDirectory {
         return customer;
     }
     
-    public void removeCustomer(Customer customer){
-        customerDirectory.remove(customer);
-        MainJFrame.system.userAccountDirectory.removeUserAccount(customer.getUserName());
-    }
     
     public Customer getCustomer(String name){
         for(Customer customer: customerDirectory){
@@ -48,6 +44,11 @@ public class CustomerDirectory {
             }
         }
         return null;
+    }
+    
+    public void removeCustomer(Customer customer){
+        customerDirectory.remove(customer);
+        MainJFrame.ecoSystem.userAccountDirectory.removeUserAccount(customer.getUserName());
     }
     
 }

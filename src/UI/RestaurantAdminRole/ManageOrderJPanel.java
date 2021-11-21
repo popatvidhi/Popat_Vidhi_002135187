@@ -288,6 +288,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Order not completed yet");
         }
         else{
+            System.out.println("DeliveryMan" + deliveryPartner.getUserName());
             order.setDeliveryMan(deliveryPartner.getUserName());
             order.setOrderStatus("Order Picked up");
             JOptionPane.showMessageDialog(null, "Order Picked up");

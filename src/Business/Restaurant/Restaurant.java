@@ -53,6 +53,14 @@ public class Restaurant {
         this.address = address;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
     public String getManagerName() {
         return managerName;
     }
@@ -61,13 +69,6 @@ public class Restaurant {
         this.managerName = managerName;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
     
     @Override
     public String toString() {

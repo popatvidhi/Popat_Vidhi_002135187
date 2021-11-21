@@ -26,11 +26,6 @@ public class OrderDirectory {
         this.orderDirectory = orderDirectory;
     }
     
-    public Order newOrder(){
-        Order order = new Order();
-        orderDirectory.add(order);
-        return order;
-    }
     
     public Order getOrderId(String id){
         for(Order order: orderDirectory){
@@ -39,6 +34,12 @@ public class OrderDirectory {
             }
         }
         return null;
+    }
+    
+    public Order newOrder(){
+        Order order = new Order();
+        orderDirectory.add(order);
+        return order;
     }
     
 }

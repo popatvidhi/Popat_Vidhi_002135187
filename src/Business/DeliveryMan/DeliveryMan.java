@@ -12,10 +12,11 @@ package Business.DeliveryMan;
 public class DeliveryMan {
     private String name;
     private String address;
-    private String email;
     private String phoneNumber;
     private int age;
     private String userName;
+    private String email;
+    
     
     public DeliveryMan(String name, String address, String email, String phoneNumber, int age, String userName) {
         this.name = name;
@@ -33,6 +34,14 @@ public class DeliveryMan {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getAddress() {
         return address;
@@ -42,13 +51,6 @@ public class DeliveryMan {
         this.address = address;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
