@@ -31,7 +31,6 @@ public class RestaurantDirectory {
     public Restaurant newRestaurant(String name, String address, String mName, String phoneNumber, String userName) {
         Restaurant restaurant = new Restaurant(name, address, mName, phoneNumber, userName);
         restaurantDirectory.add(restaurant);
-        System.out.println(restaurantDirectory.size() + "New Res");
         return restaurant;
     }
     

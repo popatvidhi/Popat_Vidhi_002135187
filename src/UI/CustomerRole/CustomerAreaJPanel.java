@@ -79,7 +79,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) workRequestJTable.getModel();
         model.setRowCount(0);
         for (Order order : ecoSystem.getOrderDirectory().getOrderDirectory()){
-            //System.out.println("Order" + order.getOrderId());
             if(account.getEmployee().getName().equals(order.getCustomer().getName())) {
                 Object[] row = new Object[8];
                 row[0] = order;
@@ -99,7 +98,6 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         boxRestaurant.removeAllItems();
         boxRestaurant.addItem("  ");
         for(Restaurant res : ecoSystem.getRestaurantDirectory().getRestaurantDirectory()) {
-            //System.out.println("res" + res);
             boxRestaurant.addItem(res.getRestaurantName());
         }
     }

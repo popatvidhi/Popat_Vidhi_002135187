@@ -180,7 +180,6 @@ public class MainJFrame extends javax.swing.JFrame {
         
         UserAccount userAccount = ecoSystem.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText());
         
-        System.out.println("EcoSYSTEM MAIN" + ecoSystem.toString() + ecoSystem.getUserAccountDirectory().getUserAccountList().size());
         
         CardLayout layout = (CardLayout) container.getLayout();
         container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, ecoSystem, customerDirectory, restaurantDirectory, deliveryManDirectory, menuDirectory, orderDirectory));
